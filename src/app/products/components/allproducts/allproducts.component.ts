@@ -22,7 +22,6 @@ getProducts() {
       console.log(res);
       this.products=res.products
       
-
     },
     (error) => {
       console.error('Error fetching products:', error);
@@ -36,7 +35,6 @@ addToArray(product_id: any){
       this.arryCart=[...this.arryCart,res]
       console.log(this.arryCart);
       
-
     },
     (error) => {
       console.error('Error fetching products:', error);
