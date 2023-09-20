@@ -9,6 +9,7 @@ import { ProdServiceService } from '../../prod-service.service';
 })
 export class AllproductsComponent implements OnInit {
   products:Product[]=[]
+arryCart:Product[]=[];
 
 constructor(private product_service:ProdServiceService){}
 
@@ -20,6 +21,20 @@ getProducts() {
     (res:any) => {
       console.log(res);
       this.products=res.products
+      
+
+    },
+    (error) => {
+      console.error('Error fetching products:', error);
+    }
+  );
+}
+addToArray(product_id: any){
+  this.product_service.addToArray_service(product_id).subscribe(
+    (res:any) => {
+      console.log(res);
+      this.arryCart=[...this.arryCart,res]
+      console.log(this.arryCart);
       
 
     },
