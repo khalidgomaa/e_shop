@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center">Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Enter your username"
+           
+            name="username"
+            required
+            minlength="3"
+            ngModel
+            #username="ngModel"
+          />
+          <div *ngIf="username.invalid && username.touched" class="alert alert-danger mt-2">
+            <div *ngIf="username.errors?.['required']">Username is required.</div>
+            <div *ngIf="username.errors?.['minlength']">minlength must be more 2 charachter.</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email"
+            ngModel
+            name="email"
+            required
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && email.touched" class="alert alert-danger mt-2">
+            <div *ngIf="email.errors?.['required']">email is required.</div>
+            <div *ngIf="email.errors?.['pattern']">email doesn't match the pattern.</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary"routerLink="/products" [disabled]='loginForm.invalid'>Log In</button>
+      </form>
+      <p class="mt-3">
+        Don't have an account? <a routerLink="/registration">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

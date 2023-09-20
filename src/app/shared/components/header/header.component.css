@@ -1,0 +1,51 @@
+header{
+    width: 100%;
+    background-color: rgb(60, 127, 29);
+}
+  /* Style for the navbar brand */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    padding-right: 20px; /* Add some spacing between the brand and toggle button */
+   
+  }
+
+
+  .navbar-nav .nav-link {
+    color: white;
+    font-size: 22px;
+    margin: 5px;
+    border-radius: 5px 20px;
+    background-color: rgb(18, 17, 18);
+    padding: 10px 20px; /* Add padding to the links for better spacing */
+    border-radius: 5px; /* Round the corners of the links */
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: #0e3d60; /* Change background color on hover */
+  }
+
+  /* Style for the toggle button */
+  .navbar-toggler {
+    border: none; /* Remove the default border */
+  }
+  .container-fluid{
+background-color: rgb(2, 162, 109);
+color: #f0f0f0;
+  }
+
+  .Products{
+    margin-right: 120px;
+  }
+.navbar {
+    opacity: 0; /* Start with 0 opacity */
+    transform: translateY(-12px); /* Start slightly above its normal position */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+  
+  .navbar.show {
+    opacity: 1; /* Show with full opacity */
+    transform: translateY(0); /* Move to its normal position */
+  }

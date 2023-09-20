@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-green bg-green">
+  <div class="container">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+      <img
+        src="/assets/249a68c9-4763-430c-a448-23412399b17d.jpeg"
+        width="90"
+        height="60"
+        alt="E-commerce"
+      />
+    </a>
+
+    <!--* Toggle button for small screens -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--* Navigation links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/products"
+            routerLinkActive="bg-primary"
+            >Products</a
+          >
+        </li>
+  <!--* Cart icon and counter -->
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/cart">
+      <i class="fa fa-shopping-cart"></i>
+      <span class="badge badge-danger">3</span> <!-- Replace 3 with your actual cart item count -->
+    </a>
+  </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/login"
+            routerLinkActive="bg-primary"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/registration"
+            routerLinkActive="bg-primary"
+            >Register</a
+          >
+        </li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
