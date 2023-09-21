@@ -1,14 +1,11 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProdServiceService {
+export class SharedService {
   private apiUrl = 'https://dummyjson.com/products';
-  
-
   constructor(private http: HttpClient) { }
 
   //~  method to fetch product data from an API
@@ -17,7 +14,7 @@ export class ProdServiceService {
   }
 
   //~  method to add a product to the cart
-  addToArray_service(id: any) {
+  getOneProduct_service(id: any) {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 

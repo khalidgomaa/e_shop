@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllproductsComponent } from 'src/app/products/components/allproducts/allproducts.component';
-import { Product } from 'src/app/products/products.interface';
+import { Iproduct } from 'src/app/products/products.interface';
 
 @Component({
   selector: 'app-cart-products',
@@ -9,11 +9,10 @@ import { Product } from 'src/app/products/products.interface';
 })
 
 export class CartProductsComponent implements OnInit{
-  cart_products:Product[]=[]
+  cart_products:Iproduct[]=[]
 constructor(private products:AllproductsComponent){
   this.cart_products=products.arryCart
 }
 ngOnInit(): void {
-
 }
 }

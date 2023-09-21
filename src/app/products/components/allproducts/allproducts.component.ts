@@ -1,17 +1,20 @@
+import { CartService } from './../../../carts/cart.service';
 import { Component, OnInit } from '@angular/core';
 import productsData from 'src/assets/products-list.json'
-import { Product } from '../../products.interface';
-import { ProdServiceService } from '../../prod-service.service';
+import { Iproduct } from '../../products.interface';
+
+import { SharedService } from 'src/app/shared.service';
 @Component({
   selector: 'app-allproducts',
   templateUrl: './allproducts.component.html',
   styleUrls: ['./allproducts.component.css']
 })
 export class AllproductsComponent implements OnInit {
-  products:Product[]=[]
-arryCart:Product[]=[];
-
-constructor(private product_service:ProdServiceService){}
+  
+  products:Iproduct[]=[]
+arryCart:Iproduct[]=[];
+constructor(private product_service:SharedService,
+ private CartService:CartService){}
 
 ngOnInit(){
   this.getProducts()
@@ -28,18 +31,8 @@ getProducts() {
     }
   );
 }
-addToArray(product_id: any){
-  this.product_service.addToArray_service(product_id).subscribe(
-    (res:any) => {
-      console.log(res);
-      this.arryCart=[...this.arryCart,res]
-      console.log(this.arryCart);
-      
-    },
-    (error) => {
-      console.error('Error fetching products:', error);
-    }
-  );
-}
+ addToCart(product: Iproduct){
+this.CartService.addCartArray_service.
+ }
 
 }
