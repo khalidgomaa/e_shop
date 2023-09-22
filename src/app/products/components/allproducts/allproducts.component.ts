@@ -29,10 +29,12 @@ getProducts() {
     (error) => {
       console.error('Error fetching products:', error);
     }
-  );
+  )
 }
+
  addToCart(product: Iproduct){
-this.CartService.addCartArray_service.
+this.CartService.addCartArray_service(product)
  }
+
 
 }

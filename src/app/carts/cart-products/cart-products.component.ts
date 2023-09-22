@@ -1,5 +1,5 @@
+import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
-import { AllproductsComponent } from 'src/app/products/components/allproducts/allproducts.component';
 import { Iproduct } from 'src/app/products/products.interface';
 
 @Component({
@@ -10,9 +10,36 @@ import { Iproduct } from 'src/app/products/products.interface';
 
 export class CartProductsComponent implements OnInit{
   cart_products:Iproduct[]=[]
-constructor(private products:AllproductsComponent){
-  this.cart_products=products.arryCart
+constructor(private CartSrvc:CartService){
+  
 }
+
 ngOnInit(): void {
+  this.cart_products=this.CartSrvc.cartArray
 }
+
+increaseQuantity(product: Iproduct) {
+  // Find the product in the cart and increase its quantity
+  const cartProduct = this.cart_products.find((p) => p.id === product.id);
+  if (cartProduct) {
+    cartProduct.quantity++;
+  }
+}
+decreaseQuantity(product: Iproduct) {
+  // Find the product in the cart and decrease its quantity, but not below 1
+  const cartProduct = this.cart_products.find((p) => p.id === product.id);
+  if (cartProduct && cartProduct.quantity > 1) {
+    cartProduct.quantity--;
+  }
+}
+getTotalPrice(): number {
+  // Calculate the total price of all products in the cart
+  return this.cart_products.reduce((total, product) => {
+    return total + product.price * product.quantity;
+  }, 0);
+
+
+
+
+
 }

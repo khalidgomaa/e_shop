@@ -10,5 +10,6 @@ cartArray:Iproduct[]=[]
 
   addCartArray_service(product:Iproduct){
     this.cartArray=[...this.cartArray,product]
+    console.log( this.cartArray)
   }
 }
