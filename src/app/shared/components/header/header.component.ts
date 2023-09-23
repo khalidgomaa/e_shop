@@ -1,3 +1,4 @@
+import { CartService } from './../../../carts/cart.service';
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
@@ -6,11 +7,14 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
-  constructor(private renderer: Renderer2, private el: ElementRef) { }
-
+  header_cart_length:number=0;
+  constructor(private renderer: Renderer2,
+     private el: ElementRef,
+     private CartService:CartService) {
+ 
+     }
   ngOnInit() {
-    // Add .show class after a short delay (you can adjust the delay)
+    this.header_cart_length =this.CartService.products_cart_length   
     setTimeout(() => {
       this.renderer.addClass(this.el.nativeElement.querySelector('.navbar'), 'show');
     }, 700); // 500 milliseconds delay, adjust as needed

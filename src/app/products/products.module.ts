@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthoModule } from '../autho/autho.module';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CartsModule } from '../carts/carts.module';
 
 
 

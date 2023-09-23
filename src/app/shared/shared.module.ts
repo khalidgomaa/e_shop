@@ -7,6 +7,9 @@ import { ProductsModule } from '../products/products.module';
 import { AuthoModule } from '../autho/autho.module';
 import { RouterModule } from '@angular/router';
 import {  HttpClientModule } from '@angular/common/http';
+import { CartService } from '../carts/cart.service';
+
+
 
 
 @NgModule({
@@ -19,7 +22,7 @@ import {  HttpClientModule } from '@angular/common/http';
   imports: [
     RouterModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   exports:[

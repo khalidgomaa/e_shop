@@ -10,6 +10,7 @@ import { Iproduct } from 'src/app/products/products.interface';
 
 export class CartProductsComponent implements OnInit{
   cart_products:Iproduct[]=[]
+  
 constructor(private CartSrvc:CartService){
   
 }
@@ -19,27 +20,34 @@ ngOnInit(): void {
 }
 
 increaseQuantity(product: Iproduct) {
-  // Find the product in the cart and increase its quantity
+ 
   const cartProduct = this.cart_products.find((p) => p.id === product.id);
   if (cartProduct) {
-    cartProduct.quantity++;
+    cartProduct['quantity']++;
   }
 }
 decreaseQuantity(product: Iproduct) {
-  // Find the product in the cart and decrease its quantity, but not below 1
+
   const cartProduct = this.cart_products.find((p) => p.id === product.id);
-  if (cartProduct && cartProduct.quantity > 1) {
-    cartProduct.quantity--;
+  if (cartProduct && cartProduct['quantity'] > 1) {
+    cartProduct['quantity']--;
   }
 }
 getTotalPrice(): number {
-  // Calculate the total price of all products in the cart
+
   return this.cart_products.reduce((total, product) => {
     return total + product.price * product.quantity;
   }, 0);
 
 
 
+}
 
 
+deleteProduct(product: Iproduct) {
+  const index = this.cart_products.findIndex((p) => p.id === product.id);
+  if (index !== -1) {
+    this.cart_products.splice(index, 1);
+  }
+}
 }

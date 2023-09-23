@@ -13,6 +13,8 @@ export class AllproductsComponent implements OnInit {
   
   products:Iproduct[]=[]
 arryCart:Iproduct[]=[];
+productInCart=false;
+alertMessage=''
 constructor(private product_service:SharedService,
  private CartService:CartService){}
 
@@ -22,7 +24,7 @@ ngOnInit(){
 getProducts() {
   this.product_service.getProducts_fromApi().subscribe(
     (res:any) => {
-      console.log(res);
+  
       this.products=res.products
       
     },
@@ -32,9 +34,15 @@ getProducts() {
   )
 }
 
- addToCart(product: Iproduct){
-this.CartService.addCartArray_service(product)
- }
+addToCart(product: Iproduct) {
+this.productInCart=this.CartService.productInCart
+this.alertMessage=this.CartService.alertMessage
 
+this.CartService.addCartArray_service(product);
 
+  }
+
+  closeAlert() {
+    this.productInCart = false;
+  }
 }

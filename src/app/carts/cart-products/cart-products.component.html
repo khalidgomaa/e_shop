@@ -29,7 +29,10 @@
                 <p class="mx-3">Quantity: {{ product.quantity }}</p>
                 <button class="btn btn-success" (click)="increaseQuantity(product)">+</button>
                 <button class="btn btn-danger" (click)="decreaseQuantity(product)">-</button>
-              </div>
+                <button class="btn btn-danger" (click)="deleteProduct(product)">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>           
+                </div>
             </div>
           </div>
         </div>
