@@ -1,12 +1,12 @@
-header{
+.navbar{
     width: 100%;
-    background-color: rgb(60, 127, 29);
+    background-color: rgb(80, 151, 48);
 }
   /* Style for the navbar brand */
   .navbar-brand {
     font-size: 24px;
     font-weight: bold;
-    padding-right: 20px; /* Add some spacing between the brand and toggle button */
+    padding-right: 20px;
    
   }
 
@@ -17,9 +17,9 @@ header{
     margin: 5px;
     border-radius: 5px 20px;
     background-color: rgb(18, 17, 18);
-    padding: 10px 20px; /* Add padding to the links for better spacing */
-    border-radius: 5px; /* Round the corners of the links */
-    transition: background-color 0.3s; /* Add a smooth transition effect */
+    padding: 10px 20px;
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
 
   }
 
