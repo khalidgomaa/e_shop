@@ -17,12 +17,12 @@ export class CartService {
   addCartArray_service(product: Iproduct) {
     if (this.cartArray.find((cartProduct) => cartProduct.id === product.id)) {
       this.arlreadyFound(product);
-      console.log("is already here");
+      // console.log("is already here");
     } else {
       this.productInCart = false;
       this.alertMessage = '';
       this.cartArray = [...this.cartArray, product];
-      this._products_cart_length.next(this.cartArray.length); // Notify subscribers
+      this._products_cart_length.next(this.cartArray.length); 
       product['quantity'] = 1;
     }
   }
@@ -30,5 +30,7 @@ export class CartService {
   arlreadyFound(product: Iproduct) {
     this.productInCart = true;
     this.alertMessage = 'Product is already in the cart!';
+    // alert('Product is already in the cart!')
+    console.log(product)
   }
 }

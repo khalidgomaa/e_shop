@@ -16,7 +16,7 @@ export class ProductsDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
+
     private product_service:SharedService
   ) { }
 
